@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/biru_utama</item>
+        <item name="android:colorPrimaryDark">@color/biru_gelap</item>
+        <item name="android:colorAccent">@color/biru_utama</item>
+        <item name="android:windowBackground">@color/putih</item>
+        <item name="android:statusBarColor">@color/biru_gelap</item>
+    </style>
+</resources>

@@ -1,0 +1,17 @@
+*.iml
+.gradle/
+local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+# Keystore rilis: hanya dari secret CI, JANGAN PERNAH di-commit.
+*.p12
+*.jks
+*.keystore
+/app/release.p12

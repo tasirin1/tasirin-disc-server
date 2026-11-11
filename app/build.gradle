@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.tasirin.discserver'
+
+    defaultConfig {
+        applicationId "com.tasirin.discserver"
+        // Android 5.0+ (perintah owner): minSdk TIDAK dinaikkan tanpa perintah eksplisit.
+        minSdk 21
+        targetSdk 36
+        versionCode 1
+        versionName "0.1.0"
+    }
+
+    compileSdk 36
+
+    // Keystore rilis TIDAK PERNAH di-commit: CI men-decode secret ANDROID_KEYSTORE_BASE64
+    // menjadi app/release.p12 dan mengisi env KEYSTORE_PASSWORD / KEY_ALIAS / KEY_PASSWORD.
+    // Tanpa berkas itu, rilis jatuh ke penandatanganan debug (tetap bisa dipasang).
+    def keystorePwd = System.getenv("KEYSTORE_PASSWORD") ?: project.findProperty("KEYSTORE_PASSWORD")
+    def keyAliasVal = System.getenv("KEY_ALIAS") ?: project.findProperty("KEY_ALIAS")
+    def keyPwd = System.getenv("KEY_PASSWORD") ?: project.findProperty("KEY_PASSWORD")
+    if (file("release.p12").exists() && (keystorePwd == null || keyAliasVal == null || keyPwd == null)) {
+        throw new GradleException("release.p12 present but KEYSTORE_PASSWORD/KEY_ALIAS/KEY_PASSWORD missing")
+    }
+    signingConfigs {
+        release {
+            storeFile file("release.p12")
+            storeType "PKCS12"
+            storePassword keystorePwd
+            keyAlias keyAliasVal
+            keyPassword keyPwd
+        }
+    }
+
+    buildTypes {
+        release {
+            // v0.1.0: minify dimatikan dulu demi kestabilan rilis pertama.
+            minifyEnabled false
+            signingConfig = file("release.p12").exists() ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+}

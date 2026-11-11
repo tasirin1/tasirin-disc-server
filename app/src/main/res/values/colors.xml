@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema khas biru-putih (perintah owner): latar putih, aksen biru. -->
+    <color name="biru_utama">#1565C0</color>
+    <color name="biru_gelap">#0D47A1</color>
+    <color name="biru_muda">#E3F2FD</color>
+    <color name="biru_teks">#0D47A1</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="abu_teks">#546E7A</color>
+    <color name="merah_galat">#C62828</color>
+</resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putih"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Kepala biru -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/biru_utama"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tasirin Disc Server"
+                android:textColor="@color/putih"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Server Remote Disc Streaming untuk PPSSPP"
+                android:textColor="@color/putih"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Kartu status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/biru_muda"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status server"
+                android:textColor="@color/biru_teks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Berhenti"
+                android:textColor="@color/biru_gelap"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvAlamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="—"
+                android:textColor="@color/biru_gelap"
+                android:textIsSelectable="true"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPenemuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Penemuan otomatis: —"
+                android:textColor="@color/abu_teks"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvGalat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/merah_galat"
+                android:textSize="13sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/biru_utama"
+            android:text="Pilih Folder Game"
+            android:textColor="@color/putih" />
+
+        <TextView
+            android:id="@+id/tvFolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Folder: belum dipilih"
+            android:textColor="@color/abu_teks"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Game yang dibagikan"
+            android:textColor="@color/biru_teks"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvGames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Belum ada game. Pilih folder dulu."
+            android:textColor="@color/abu_teks"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMulai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/biru_utama"
+                android:text="Mulai Server"
+                android:textColor="@color/putih" />
+
+            <Button
+                android:id="@+id/btnBerhenti"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/biru_muda"
+                android:text="Berhenti"
+                android:textColor="@color/biru_teks" />
+        </LinearLayout>
+
+        <!-- Kartu petunjuk -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@color/biru_muda"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cara menyambung dari PPSSPP"
+                android:textColor="@color/biru_teks"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="1. Dua perangkat harus satu WiFi yang sama.\n2. Di perangkat ini: pilih folder berisi ISO/CSO/CHD, lalu ketuk Mulai Server.\n3. Di PPSSPP perangkat lain: Settings → Tools → Remote Disc Streaming → Browse games. Game di sini harusnya muncul sendiri.\n4. Bila tidak muncul: di layar Remote Disc Streaming PPSSPP, buka Settings, aktifkan konfigurasi manual, lalu isi alamat IP dan port persis seperti tertulis di kartu status di atas.\n5. Biar loading enteng, di PPSSPP ubah Settings → System → I/O timing method ke Host."
+                android:textColor="@color/biru_gelap"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Aplikasi ini harus tetap terbuka (server jalan di latar sebagai layanan). Save game tetap tersimpan di perangkat yang main, bukan di sini."
+            android:textColor="@color/abu_teks"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

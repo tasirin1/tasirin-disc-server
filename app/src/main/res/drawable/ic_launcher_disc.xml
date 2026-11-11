@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Latar biru penuh -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M0,0h48v48h-48z" />
+    <!-- Cakram putih -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,9a15,15 0 1,0 0.01,0zM24,13.5a10.5,10.5 0 1,1 -0.01,0z"
+        android:fillType="evenOdd" />
+    <!-- Lubang tengah biru -->
+    <path
+        android:fillColor="#1565C0"
+        android:pathData="M24,19.5a4.5,4.5 0 1,0 0.01,0zM24,22a2,2 0 1,1 -0.01,0z"
+        android:fillType="evenOdd" />
+</vector>
